@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Game {
     WordSelector word = new WordSelector();
     HangmanBuilder display = new HangmanBuilder();
+    Rules rules = new Rules();
     Scanner scan = new Scanner(System.in);
+    LetterValidator checker = new LetterValidator();
 
     String gameWord = word.Word();
 
@@ -12,12 +14,18 @@ public class Game {
 
     public void begin() {
 
-        while (chancesLeft >= 0) {
-            letter = scan.nextLine();
-            System.out.println("Your letter was : " + letter);
+        rules.displayRules();
 
-            chancesLeft -= 1;
-            display.printGame(chancesLeft);
+        while (chancesLeft >= 0) {
+            System.out.println();
+            System.out.println("Please enter a letter");
+            letter = scan.nextLine();
+            Boolean result = checker.validator(letter, gameWord);
+
+            if(!result) {
+                chancesLeft -= 1;
+                display.printGame(chancesLeft);
+            }
         }
     }
 }
