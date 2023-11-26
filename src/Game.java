@@ -15,6 +15,7 @@ public class Game {
     public void begin() {
 
         rules.displayRules();
+        System.out.println(gameWord.length());
 
         while (chancesLeft >= 0) {
             System.out.println();
