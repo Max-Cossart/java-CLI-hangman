@@ -1,4 +1,10 @@
-public class WordDisplay {
+public class WordUtils {
+    Words word = new Words();
+
+    public String Word() {
+        int wordIndex = (int) Math.floor(Math.random() * 172);
+        return word.wordsList[wordIndex];
+    }
 
     public String displayWordStart(String word) {
         String display = "";
@@ -18,5 +24,13 @@ public class WordDisplay {
             }
         }
         return String.join(" ", displayString);
+    }
+
+    public boolean validator(String letter, String word) {
+        if(word.contains(letter)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
