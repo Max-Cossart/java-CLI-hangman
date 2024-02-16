@@ -23,14 +23,14 @@ public class Game {
         rules.displayRules();
         String gameString = wordUtils.displayWordStart(gameWord);
 
-        while (chancesLeft >= 0 ) {
+        while (chancesLeft >= 0) {
             System.out.println();
             System.out.println("Please enter a letter");
             letter = scan.nextLine();
             Boolean result = wordUtils.validator(letter, gameWord);
             Matcher matcher = pattern.matcher(letter);
 
-            while(!matcher.find()) {
+            while (!matcher.find()) {
                 System.out.println("this is not a letter");
                 System.out.println();
                 System.out.println("Please enter a letter");
@@ -38,7 +38,7 @@ public class Game {
                 result = wordUtils.validator(letter, gameWord);
             }
 
-            while(incorrect.contains(letter)) {
+            while (incorrect.contains(letter)) {
                 System.out.println("You have already guessed this letter");
                 System.out.println();
                 System.out.println("Please enter a different letter");
@@ -46,7 +46,7 @@ public class Game {
                 result = wordUtils.validator(letter, gameWord);
             }
 
-            while(correct.contains(letter)) {
+            while (correct.contains(letter)) {
                 System.out.println("You have already guessed this letter");
                 System.out.println();
                 System.out.println("Please enter a different letter");
@@ -54,7 +54,7 @@ public class Game {
                 result = wordUtils.validator(letter, gameWord);
             }
 
-            if(!result) {
+            if (!result) {
                 chancesLeft -= 1;
                 display.printGame(chancesLeft);
                 incorrect += letter + "," + " ";
@@ -62,8 +62,7 @@ public class Game {
                 correct += letter;
             }
 
-
-            if(incorrect != "") {
+            if (incorrect != "") {
                 System.out.println("Incorrect Guess: " + incorrect);
             }
 
@@ -71,19 +70,19 @@ public class Game {
             System.out.println();
             System.out.println(gameString);
 
-            if(!gameString.contains("_")) {
+            if (!gameString.contains("_")) {
                 System.out.println();
                 System.out.println("You win");
                 System.out.println();
                 break;
             }
 
-            if(chancesLeft == 0) {
-                System.out.println();   
+            if (chancesLeft == 0) {
+                System.out.println();
                 System.out.println("Game Over");
-                System.out.println();   
+                System.out.println();
                 System.out.println("The word was: " + gameWord);
-                System.out.println();   
+                System.out.println();
                 break;
             }
         }

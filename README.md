@@ -1,18 +1,48 @@
-## Getting Started
+# Hangman CLI Game
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This is a small Java project to get back in the swing of using Java.
 
-## Folder Structure
+## Table of Contents
 
-The workspace contains two folders by default, where:
+- [Snippets](#snippets)
+- [Tech Stack](#tech-stack)
+- [Requirements](#requirements)
+  - [MVP](#mvp)
+- [Known Issues](#known-issuses)
+- [Future Goals](#future-goals)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Snippets
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- Upon starting the game a word is selected from a list and the length is displayed. You can then input letters.
+  <br>
+  ![game start](./assets/GameStart.png)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- If you guess the word correctly before the hangman is built you have won.
+  <br>
+  ![game win](./assets/Win.png)
 
-## Dependency Management
+- If the hangman is built before you guess the correct word then the Game will end and you have lost.
+  <br>
+  ![game over](./assets/GameOver.png)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Tech Stack
+
+- Java
+
+## Requirements
+
+### MVP
+
+- Recreate a version of the game Hangman to be played in a Java console application.
+- The game should randomly select a word from the provided list.
+- When the word is selected, a row of underscores representing letters in the word should be printed to the console.
+- The user should be able to guess wrong 7 times before they loose
+- They should be given the option to guess a letter or the whole word
+
+## Known Issues
+
+- If you enter multiple letters it does not detect it properly.
+
+## Future Goals
+
+- Allow users to input whole words as well as letters.
